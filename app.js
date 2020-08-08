@@ -1,8 +1,7 @@
-const qwerty = document.getElementById('qwerty');
+const keyboard = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const phaseUl = phrase.firstElementChild;
 const startButton = document.querySelector('.btn__reset');
-const overlay = startButton.parentNode;
 
 let missed = 0;
 
@@ -18,6 +17,7 @@ const phrases = [
 
 // click Start game button to start
 startButton.addEventListener('click', (e) => {
+  let overlay = startButton.parentNode;
   overlay.style.display = `none`;
 });
 
@@ -53,7 +53,7 @@ const checkLetter = (button) => {
   for (let i = 0; i < letterList.length; i++) {
     let phraseLetter = letterList[i].textContent;
     if (chosenLetter === phraseLetter) {
-      letterList[i].className += ` show`;
+      letterList[i].classList.add('show');
       match = chosenLetter;
       i--;
     }
@@ -62,8 +62,10 @@ const checkLetter = (button) => {
 };
 
 // listen for guess input
+
 qwerty.addEventListener('click', (e) => {
-  if (e.target.tagName === 'BUTTON' && e.target.className != `chosen`) {
+  e.preventDefault();
+  if (e.target.tagName === 'BUTTON') {
     let pickedLetter = e.target;
     pickedLetter.className = `chosen`;
     pickedLetter.disabled = true;
@@ -77,6 +79,7 @@ qwerty.addEventListener('click', (e) => {
       lostHeart.innerHTML = `<img src="images/lostHeart.png" height="35px" width="30px" />`;
       hearts.appendChild(lostHeart);
     }
+    checkWin();
   }
 });
 
@@ -85,9 +88,13 @@ const checkWin = () => {
   const showedLetters = document.getElementsByClassName('show');
   const allLetters = document.getElementsByClassName('letter');
 
-  if (showedLetters.length === allLetters.length && missed < 5) {
+  if (showedLetters.length === allLetters.length) {
+    overlay.style.display = '';
     overlay.className = `win`;
+    overlay.firstElementChild.textContent = `Congratulations!`;
   } else if (missed >= 5) {
+    overlay.style.display = '';
     overlay.className = `lose`;
+    overlay.firstElementChild.textContent = `Lose`;
   }
 };

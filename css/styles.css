@@ -56,6 +56,7 @@ button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .main-container {
@@ -81,11 +82,11 @@ button {
 /* Phrase */
 
 .letter {
-  font-size: var(--font-size-medium);
+  font-size: 45px;
   height: 80px;
   width: 80px;
-  padding: 30px 1px 40px 1px;
-  margin: 2px 1.5px;
+  padding: 15px 1px 22px 1px;
+  margin: 5px 1.5px;
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
@@ -97,11 +98,11 @@ button {
 
 .show {
   color: #000;
-  width: 60px;
+  /* width: 60px; */
   background-color: #76ce82;
-  font-size: 3rem;
-  padding: 0 10px;
-  margin: 0 5px;
+  /* font-size: 3rem; */
+  /* padding: 0 10px;
+  margin: 0 5px; */
 }
 
 /* Keyboard */
@@ -151,6 +152,7 @@ button {
 
 .start a {
   color: var(--color-win);
+  cursor: pointer;
 }
 
 .win {
