@@ -8,10 +8,10 @@
 	--color-lose: #d94545;
 	--color-start: #5b85b7;
 	--color-neutral: #445069;
-	--color-neutral-light: #d2d2d2;
+	--color-neutral-light: #abb1cf8c;
 	--color-keys: #37474f;
 	--color-keys-light: #e5e5e5;
-	--font-size-large: 60px;
+	--font-size-large: 55px;
 	--font-size-medium: 30px;
 	--transition: all 0.2s ease-in-out;
 }
@@ -38,12 +38,13 @@ ul {
 
 a {
 	cursor: pointer;
+	font-family: monospace;
 }
 
 h2 {
 	margin: 0;
 	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Sriracha';
 	font-size: var(--font-size-large);
 	margin: 0;
 }
@@ -86,10 +87,11 @@ button {
 /* Phrase */
 
 .letter {
-	font-size: 35px;
-	height: 70px;
-	width: 70px;
-	padding: 15px 1px 22px 1px;
+	font-family: 'Baloo Tamma 2';
+	font-size: 40px;
+	height: 80px;
+	width: 80px;
+	padding: 10px 1px 22px 1px;
 	margin: 5px 1.5px;
 	color: transparent;
 	background: var(--color-neutral-light);
@@ -101,8 +103,9 @@ button {
 }
 
 .show {
-	color: #000;
-	background-color: #76ce82;
+	color: var(--color-keys);
+	background-color: #b4cdfd;
+	animation-duration: 1s;
 }
 
 /* Keyboard */
@@ -119,15 +122,18 @@ button {
 	color: #ffffff;
 }
 
-.btn__reset,
-.btn__start {
-	padding: 8px;
+.btn__reset {
+	padding: 8px 15px;
 	margin: 50px auto;
 	background: #ffffff;
 	border-radius: 5px;
 	font-size: var(--font-size-medium);
 }
 
+.tries,
+.lost-tries {
+	margin: 0 2px;
+}
 /* Overlay */
 
 #overlay {
@@ -141,6 +147,7 @@ button {
 	left: 0;
 	right: 0;
 	border-radius: 5px;
+	z-index: 10;
 }
 
 .title {
@@ -149,10 +156,12 @@ button {
 
 .start {
 	background-color: var(--color-start);
+	animation-duration: 1s;
+	transition: all 3s;
 }
 
 .start a {
-	color: var(--color-win);
+	color: var(--color-start);
 }
 
 .win {
@@ -169,4 +178,14 @@ button {
 
 .lose a {
 	color: var(--color-lose);
+}
+
+.win {
+	animation-duration: 1s;
+	animation-delay: 2s;
+}
+
+.lose {
+	animation-duration: 1s;
+	animation-delay: 1s;
 }
