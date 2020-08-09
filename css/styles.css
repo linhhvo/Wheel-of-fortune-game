@@ -4,170 +4,169 @@
 /* Variables */
 
 :root {
-  --color-win: #78cf82;
-  --color-lose: #d94545;
-  --color-start: #5b85b7;
-  --color-neutral: #445069;
-  --color-neutral-light: #d2d2d2;
-  --color-keys: #37474f;
-  --color-keys-light: #e5e5e5;
-  --font-size-large: 60px;
-  --font-size-medium: 30px;
-  --transition: all 0.2s ease-in-out;
+	--color-win: #78cf82;
+	--color-lose: #d94545;
+	--color-start: #5b85b7;
+	--color-neutral: #445069;
+	--color-neutral-light: #d2d2d2;
+	--color-keys: #37474f;
+	--color-keys-light: #e5e5e5;
+	--font-size-large: 60px;
+	--font-size-medium: 30px;
+	--transition: all 0.2s ease-in-out;
 }
 
 /* main */
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  justify-content: space-evenly;
-  flex-direction: column;
-  display: flex;
-  height: 100vh;
+	justify-content: space-evenly;
+	flex-direction: column;
+	display: flex;
+	height: 100vh;
 }
 
 li,
 ol,
 ul {
-  padding: 0;
-  display: inline-block;
+	padding: 0;
+	display: inline-block;
+}
+
+a {
+	cursor: pointer;
 }
 
 h2 {
-  margin: 0;
-  text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
-  font-size: var(--font-size-large);
-  margin: 0;
+	margin: 0;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	font-size: var(--font-size-large);
+	margin: 0;
 }
 
 button {
-  width: 2em;
-  margin: 6px;
-  border: 1px solid transparent;
-  padding: 0.5rem 1rem;
-  color: var(--color-keys);
-  font-size: var(--font-size-medium);
-  background-color: var(--color-keys-light);
-  border-radius: 5px;
-  -webkit-transition: var(--transition);
-  -o-transition: var(--transition);
-  transition: var(--transition);
-  cursor: pointer;
+	width: 2em;
+	margin: 6px;
+	border: 1px solid transparent;
+	padding: 0.5rem 1rem;
+	color: var(--color-keys);
+	font-size: var(--font-size-medium);
+	background-color: var(--color-keys-light);
+	border-radius: 5px;
+	-webkit-transition: var(--transition);
+	-o-transition: var(--transition);
+	transition: var(--transition);
+	cursor: pointer;
 }
 
 .main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-  max-height: 900px;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100%;
+	max-height: 900px;
+	text-align: center;
 }
 
 .section {
-  width: 100%;
-  padding: 10px;
+	width: 100%;
+	padding: 10px;
 }
 
 /* Title */
 
 .header {
-  color: var(--color-start);
+	color: var(--color-start);
 }
 
 /* Phrase */
 
 .letter {
-  font-size: 45px;
-  height: 80px;
-  width: 80px;
-  padding: 15px 1px 22px 1px;
-  margin: 5px 1.5px;
-  color: transparent;
-  background: var(--color-neutral-light);
-  border-radius: 5px;
+	font-size: 35px;
+	height: 70px;
+	width: 70px;
+	padding: 15px 1px 22px 1px;
+	margin: 5px 1.5px;
+	color: transparent;
+	background: var(--color-neutral-light);
+	border-radius: 5px;
 }
 
 .space {
-  width: 15px;
+	width: 15px;
 }
 
 .show {
-  color: #000;
-  /* width: 60px; */
-  background-color: #76ce82;
-  /* font-size: 3rem; */
-  /* padding: 0 10px;
-  margin: 0 5px; */
+	color: #000;
+	background-color: #76ce82;
 }
 
 /* Keyboard */
 
 .keyrow {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .chosen {
-  background: var(--color-neutral);
-  border-radius: 5px;
-  font-size: var(--font-size-medium);
-  color: #ffffff;
+	background: var(--color-neutral);
+	border-radius: 5px;
+	font-size: var(--font-size-medium);
+	color: #ffffff;
 }
 
 .btn__reset,
 .btn__start {
-  padding: 8px;
-  margin: 50px auto;
-  background: #ffffff;
-  border-radius: 5px;
-  font-size: var(--font-size-medium);
+	padding: 8px;
+	margin: 50px auto;
+	background: #ffffff;
+	border-radius: 5px;
+	font-size: var(--font-size-medium);
 }
 
 /* Overlay */
 
 #overlay {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  color: #ffffff;
-  justify-content: center;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	color: #ffffff;
+	justify-content: center;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-radius: 5px;
 }
 
 .title {
-  color: #fff;
+	color: #fff;
 }
 
 .start {
-  background-color: var(--color-start);
+	background-color: var(--color-start);
 }
 
 .start a {
-  color: var(--color-win);
-  cursor: pointer;
+	color: var(--color-win);
 }
 
 .win {
-  background-color: var(--color-win);
+	background-color: var(--color-win);
 }
 
 .win a {
-  color: var(--color-win);
+	color: var(--color-win);
 }
 
 .lose {
-  background-color: var(--color-lose);
+	background-color: var(--color-lose);
 }
 
 .lose a {
-  color: var(--color-lose);
+	color: var(--color-lose);
 }
