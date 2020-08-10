@@ -21,8 +21,7 @@ startButton.addEventListener('click', () => {
 	// reset game if play again
 	resetGame();
 	overlay.classList.add('start');
-	overlay.classList.add('animate__animated');
-	overlay.classList.add('animate__slideOutUp');
+	overlay.classList.add('slide-up');
 });
 
 // return a random phrase from an array
@@ -58,8 +57,7 @@ const checkLetter = (button) => {
 		let phraseLetter = letters[i].textContent;
 		if (guessedLetter === phraseLetter) {
 			letters[i].classList.add('show');
-			letters[i].classList.add('animate__animated');
-			letters[i].classList.add('animate__flipInY');
+			letters[i].classList.add('flip');
 			match = guessedLetter;
 		}
 	}
@@ -90,16 +88,18 @@ qwerty.addEventListener('click', (e) => {
 const checkWin = () => {
 	const displayResult = {
 		win: () => {
-			overlay.style.display = 'flex';
+			endGame();
+			overlay.style.display = '';
+			overlay.classList.replace('slide-up', 'slide-down');
 			overlay.classList.replace('start', 'win');
-			overlay.classList.replace('animate__slideOutUp', 'animate__slideInDown');
 			resultMessage.textContent = `Congratulations! You have won the game.`;
 			startButton.textContent = 'Play Again';
 		},
 		lose: () => {
-			overlay.style.display = 'flex';
+			endGame();
+			overlay.style.display = '';
+			overlay.classList.replace('slide-up', 'slide-down');
 			overlay.classList.replace('start', 'lose');
-			overlay.classList.replace('animate__slideOutUp', 'animate__slideInDown');
 			resultMessage.textContent = `Uh Oh! You have lost the game.`;
 			startButton.textContent = 'Play Again';
 		},
@@ -136,4 +136,11 @@ function resetGame() {
 	// reset phrase
 	phraseArray = getRandomPhraseAsArray(phrases);
 	addPhraseToDisplay(phraseArray);
+}
+
+// disable all keyboard button to discontinue game
+function endGame() {
+	for (let i = 0; i < qwertyKey.length; i++) {
+		qwertyKey[i].disabled = true;
+	}
 }
