@@ -1,2 +1,2 @@
-# Wheel of Success
-Wheel of Success game show app
+# Wheel of Fortune
+Wheel of Fortune game show app
